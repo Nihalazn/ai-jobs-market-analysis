@@ -1,0 +1,37 @@
+2026-06-19 12:29:32.449 | INFO     | __main__:run_pipeline:18 - ==================================================
+2026-06-19 12:29:32.450 | INFO     | __main__:run_pipeline:19 - PIPELINE STARTED
+2026-06-19 12:29:32.450 | INFO     | __main__:run_pipeline:20 - ==================================================
+2026-06-19 12:29:32.451 | INFO     | __main__:run_pipeline:23 - STEP 1: Extraction
+2026-06-19 12:29:32.451 | INFO     | extract:extract:7 - Starting data extraction...
+2026-06-19 12:29:32.509 | INFO     | extract:extract:19 - Extracted 15000 rows from data/raw/ai_job_dataset1.csv
+2026-06-19 12:29:32.608 | INFO     | extract:extract:27 - Staged data saved to data/processed/staging.csv
+2026-06-19 12:29:32.610 | INFO     | __main__:run_pipeline:25 - Extraction complete: 15000 rows
+2026-06-19 12:29:32.610 | INFO     | __main__:run_pipeline:27 - STEP 2: Transformation
+2026-06-19 12:29:32.611 | INFO     | transform:transform:8 - Starting data transformation...
+2026-06-19 12:29:32.685 | INFO     | transform:transform:17 - Loaded 15000 rows from staging
+2026-06-19 12:29:32.689 | INFO     | transform:transform:23 - Dropped unnecessary columns
+2026-06-19 12:29:32.703 | INFO     | transform:transform:28 - Removed 0 duplicate rows
+2026-06-19 12:29:32.706 | INFO     | transform:transform:33 - Rows after salary filter: 15000
+2026-06-19 12:29:32.883 | INFO     | transform:transform:65 - Grouped rare categories
+2026-06-19 12:29:32.884 | INFO     | transform:transform:85 - Encoded salary_currency
+2026-06-19 12:29:33.883 | INFO     | transform:transform:85 - Encoded experience_level
+2026-06-19 12:29:34.832 | INFO     | transform:transform:85 - Encoded employment_type
+2026-06-19 12:29:35.883 | INFO     | transform:transform:85 - Encoded company_size
+2026-06-19 12:29:35.979 | INFO     | transform:transform:85 - Encoded job_title_grouped
+2026-06-19 12:29:36.075 | INFO     | transform:transform:85 - Encoded location_grouped
+2026-06-19 12:29:37.337 | INFO     | transform:transform:85 - Encoded residence_grouped
+2026-06-19 12:29:37.442 | INFO     | transform:transform:85 - Encoded skills_grouped
+2026-06-19 12:29:37.559 | INFO     | transform:transform:85 - Encoded industry_grouped
+2026-06-19 12:29:37.668 | INFO     | transform:transform:85 - Encoded education_required
+2026-06-19 12:29:37.810 | INFO     | transform:transform:90 - Transformed data saved: 15000 rows
+2026-06-19 12:29:37.810 | INFO     | __main__:run_pipeline:29 - Transformation complete: 15000 rows
+2026-06-19 12:29:37.811 | INFO     | __main__:run_pipeline:31 - STEP 3: Loading
+2026-06-19 12:29:37.811 | INFO     | load:load:7 - Starting data load into PostgreSQL...
+2026-06-19 12:29:37.881 | INFO     | load:load:16 - Loaded 15000 rows to push to PostgreSQL
+2026-06-19 12:29:37.950 | INFO     | load:load:24 - Connected to PostgreSQL successfully
+2026-06-19 12:29:39.466 | INFO     | load:load:37 - Loaded 15000 rows into ai_jobs table
+2026-06-19 12:29:39.476 | INFO     | load:load:45 - Verified: 15000 rows in database
+2026-06-19 12:29:39.478 | INFO     | __main__:run_pipeline:33 - Load complete: 15000 rows in database
+2026-06-19 12:29:39.478 | INFO     | __main__:run_pipeline:35 - ==================================================
+2026-06-19 12:29:39.478 | INFO     | __main__:run_pipeline:36 - PIPELINE COMPLETED SUCCESSFULLY
+2026-06-19 12:29:39.479 | INFO     | __main__:run_pipeline:37 - ==================================================
